@@ -166,11 +166,18 @@ body {
     padding: 2rem 0;
 }
 
-/* Theme Toggle Positioning */
-.theme_toggle {
+/* Top Actions Positioning */
+.top_actions {
     position: absolute;
     top: 2rem;
     right: 2rem;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 100;
+}
+
+.theme_toggle,
+.github_link {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -182,7 +189,6 @@ body {
     align-items: center;
     justify-content: center;
     transition: all var(--transition-fast);
-    z-index: 100;
 }
 
 /* Controls Section */
@@ -573,10 +579,18 @@ body {
     border-color: var(--accent-primary);
 }
 
-.theme_toggle:hover {
+.theme_toggle:hover,
+.github_link:hover {
     background: var(--bg-hover);
     color: var(--text-primary);
+}
+
+.theme_toggle:hover {
     transform: rotate(15deg);
+}
+
+.github_link:hover {
+    transform: translateY(-2px);
 }
 
 .icon_sun,
@@ -775,9 +789,13 @@ body {
         justify-content: center;
     }
 
-    .theme_toggle {
+    .top_actions {
         top: 1rem;
         right: 1rem;
+    }
+
+    .theme_toggle,
+    .github_link {
         width: 40px;
         height: 40px;
     }
